@@ -1,0 +1,56 @@
+.container {
+    width: 83%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* ---- HEADER ---- */
+
+#header {
+    background: #444242;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#header .linkbutton {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#header .linkbutton button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+}
+
+#header .linkbutton button img,
+#header .linkbutton button:nth-child(2) img {
+    width: 30px;
+    height: auto;
+}
+
+/* ---- FIN DEL HEADER ---- */
+
+/* ---- NAVIGATION BAR ---- */
+#navbar {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#navbar ul {
+    padding: 0;
+    list-style: none;
+}
+
+#navbar li {
+    display: inline;
+}
+
+#navbar a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 18px;
+    padding-right: 15px;
+}
