@@ -7,12 +7,14 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { TarjetaCreditoComponent } from './components/tarjeta-credito/tarjeta-credito.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { ListaTarjetasComponent } from './components/lista-tarjetas/lista-tarjetas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TarjetaCreditoComponent,
-    InicioComponent
+    InicioComponent,
+    ListaTarjetasComponent
   ],
   imports: [
     BrowserModule,

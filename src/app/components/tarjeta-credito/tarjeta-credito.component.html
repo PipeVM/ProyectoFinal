@@ -1,31 +1,35 @@
 <div class="container">
-    <form [formGroup]="form" (ngSubmit)="guardarTarjeta()">
-      <div class="form-group">
-        <label for="dni">DNI del Titular:</label>
-        <input id="dni" type="text" formControlName="dni" placeholder="DNI del Titular">
-      </div>
+  <form [formGroup]="form" (ngSubmit)="guardarTarjeta()">
+    <div class="form-group">
+      <label for="dni">DNI del Titular:</label>
+      <input id="dni" type="text" formControlName="dni" placeholder="DNI del Titular" maxlength="8">
+    </div>
 
-      <div class="form-group">
-        <label for="numeroTarjeta">Numero de Tarjeta:</label>
-        <input id="numeroTarjeta" type="text" formControlName="numeroTarjeta" placeholder="Numero de Tarjeta">
-      </div>
+    <div class="form-group">
+      <label for="numeroTarjeta">Numero de Tarjeta:</label>
+      <input id="numeroTarjeta" type="text" formControlName="numeroTarjeta" placeholder="Numero de Tarjeta" maxlength="16">
+    </div>
 
-      <div class="form-group">
-        <label for="titular">Nombre y Apellido del Titular:</label>
-        <input id="titular" type="text" formControlName="titular" placeholder="Nombre y Apellido">
-      </div>
+    <div class="form-group">
+      <label for="titular">Nombre y Apellido del Titular:</label>
+      <input id="titular" type="text" formControlName="titular" placeholder="Nombre y Apellido" maxlength="40">
+    </div>
 
-      <div class="expiration-security">
-        <div>
-          <label for="fechaExpiracion">Fecha de Vencimiento:</label>
-          <input id="fechaExpiracion" type="text" formControlName="fechaExpiracion" placeholder="MM/AAAA">
-        </div>
-        <div>
-          <label for="cvv">Código de Seguridad:</label>
-          <input id="cvv" type="text" formControlName="cvv" placeholder="CVV">
-        </div>
+    <div class="lineavencimientocvv">
+      <div class="date-input">
+        <label for="fechaExpiracionMes">Mes:</label>
+        <input for="fechaExpiracionMes" type="text" formControlName="fechaExpiracionMes" placeholder="MM" maxlength="2" />
       </div>
+      <div class="date-input">
+        <label for="fechaExpiracionAnio">Año de Vencimiento:</label>
+        <input for="fechaExpiracionAnio" type="text" formControlName="fechaExpiracionAnio" placeholder="AA" maxlength="2" />
+      </div>
+      <div class="cvv-input">
+        <label for="cvv">Código de Seguridad:</label>
+        <input id="cvv" type="password" formControlName="cvv" pattern="[0-9]*" placeholder="CVV" maxlength="3">
+      </div>
+    </div>
 
-      <button class="botonguardar" type="submit" [disabled]="form.invalid">Guardar Tarjeta</button>
-    </form>
+    <button class="botonguardar" type="submit" [disabled]="form.invalid">Guardar Tarjeta</button>
+  </form>
 </div>

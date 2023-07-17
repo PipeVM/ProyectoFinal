@@ -19,11 +19,17 @@ export class TarjetaCreditoComponent {
   constructor(private fb: FormBuilder,
     private _tarjetaService: TarjetaService) {
     this.form = this.fb.group({
-      dni: ['', Validators.required],
-      numeroTarjeta: ['', Validators.required],
+      dni: ['', Validators.required, Validators.maxLength(8), Validators.minLength(7), 
+      Validators.pattern('[0-9]*')],
+      numeroTarjeta: ['', Validators.required, Validators.maxLength(16), Validators.minLength(16), 
+      Validators.pattern('[0-9]*')],
       titular: ['', Validators.required],
-      fechaExpiracion: ['', Validators.required],
-      cvv: ['', Validators.required]
+      fechaExpiracionMes: ['', Validators.required,, Validators.maxLength(2), Validators.minLength(1),
+      Validators.pattern('[0-9]*')],
+      fechaExpiracionAnio: ['', Validators.required,, Validators.maxLength(2), Validators.minLength(1),
+      Validators.pattern('[0-9]*')],
+      cvv: ['', Validators.required, Validators.maxLength(3), Validators.minLength(3),
+      Validators.pattern('[0-9]*')]
     });
   }
 
@@ -44,7 +50,8 @@ obtenerTarjetas() {
       dni: this.form.get('dni')?.value, // Agregue el DNI
       titular: this.form.get('titular')?.value,
       numeroTarjeta: this.form.get('numeroTarjeta')?.value,
-      fechaExpiracion: this.form.get('fechaExpiracion')?.value,
+      fechaExpiracionMes: this.form.get('fechaExpiracion')?.value, // Cambie Fecha a Mes
+      fechaExpiracionAnio: this.form.get('fechaExpiracion')?.value, // Cambie Fecha a Anio
       cvv: this.form.get('cvv')?.value,
     }
 
@@ -91,9 +98,9 @@ obtenerTarjetas() {
      dni: tarjeta.dni, // Agregue el DNI
      titular: tarjeta.titular,
      numeroTarjeta: tarjeta.numeroTarjeta,
-     fechaExpiracion: tarjeta.fechaExpiracion,
+     fechaExpiracionMes: tarjeta.fechaExpiracionMes,
+     fechaExpiracionAnio: tarjeta.fechaExpiracion,
      cvv: tarjeta.cvv
     })
   }
 }
-
