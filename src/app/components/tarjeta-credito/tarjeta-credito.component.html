@@ -1,31 +1,31 @@
 <div class="container">
-    <form [formGroup]="userForm" (ngSubmit)="guardarTarjeta()">
+    <form [formGroup]="form" (ngSubmit)="guardarTarjeta()">
       <div class="form-group">
         <label for="dni">DNI del Titular:</label>
         <input id="dni" type="text" formControlName="dni" placeholder="DNI del Titular">
       </div>
 
       <div class="form-group">
-        <label for="cardNumber">Numero de Tarjeta:</label>
-        <input id="cardNumber" type="text" formControlName="cardNumber" placeholder="Numero de Tarjeta">
+        <label for="numeroTarjeta">Numero de Tarjeta:</label>
+        <input id="numeroTarjeta" type="text" formControlName="numeroTarjeta" placeholder="Numero de Tarjeta">
       </div>
 
       <div class="form-group">
-        <label for="fullName">Nombre y Apellido del Titular:</label>
-        <input id="fullName" type="text" formControlName="fullName" placeholder="Nombre y Apellido">
+        <label for="titular">Nombre y Apellido del Titular:</label>
+        <input id="titular" type="text" formControlName="titular" placeholder="Nombre y Apellido">
       </div>
 
       <div class="expiration-security">
         <div>
-          <label for="expiration">Fecha de Vencimiento:</label>
-          <input id="expiration" type="text" formControlName="expiration" placeholder="MM/AAAA" [(ngModel)]="expirationValue" (input)="handleExpirationInput(expirationValue)" [class.with-slash]="expirationValue.length >= 2">
+          <label for="fechaExpiracion">Fecha de Vencimiento:</label>
+          <input id="fechaExpiracion" type="text" formControlName="fechaExpiracion" placeholder="MM/AAAA">
         </div>
         <div>
-          <label for="securityCode">Código de Seguridad:</label>
-          <input id="securityCode" type="text" formControlName="securityCode" placeholder="CVV">
+          <label for="cvv">Código de Seguridad:</label>
+          <input id="cvv" type="text" formControlName="cvv" placeholder="CVV">
         </div>
       </div>
 
-      <button class="botonguardar" type="submit" [disabled]="userForm.invalid">Guardar Tarjeta</button>
+      <button class="botonguardar" type="submit" [disabled]="form.invalid">Guardar Tarjeta</button>
     </form>
 </div>
