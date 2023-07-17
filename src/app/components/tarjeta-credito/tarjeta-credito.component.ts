@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -6,35 +6,40 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './tarjeta-credito.component.html',
   styleUrls: ['./tarjeta-credito.component.css']
 })
-export class TarjetaCreditoComponent implements OnInit {
-  user!: FormGroup;
+export class TarjetaCreditoComponent {
+  userForm: FormGroup;
+  listaTarjetas: any[] = [];
+  accion = 'Agregar';
+  expirationValue: string = '';
 
-  constructor(private fb: FormBuilder) {}
-
-  ngOnInit() {
-    this.user = this.fb.group({
-      dni: ['', [Validators.required, Validators.minLength(2)]],
+  constructor(private fb: FormBuilder) {
+    this.userForm = this.fb.group({
+      dni: ['', Validators.required],
       cardNumber: ['', Validators.required],
       fullName: ['', Validators.required],
-      expiration: this.fb.group({
-        month: ['', [Validators.required, Validators.pattern('^(0[1-9]|1[0-2])$')]],
-        year: ['', [Validators.required, Validators.pattern('^\\d{4}$')]]
-      }),
+      expiration: ['', Validators.required],
       securityCode: ['', Validators.required]
     });
   }
 
-  onSubmit() {
-    // Handle form submission logic here
+  guardarTarjeta() {
+    if (this.userForm.valid) {
+      const nuevaTarjeta = {
+        dni: this.userForm.value.dni,
+        cardNumber: this.userForm.value.cardNumber,
+        fullName: this.userForm.value.fullName,
+        expiration: this.userForm.value.expiration,
+        securityCode: this.userForm.value.securityCode
+      };
+
+      this.listaTarjetas.push(nuevaTarjeta);
+      this.userForm.reset();
+    }
   }
 
-  handleExpirationInput(target: any) {
-    const value = target.value;
+  handleExpirationInput(value: string) {
     const formattedValue = value.replace(/[^0-9]/g, '');
-    const month = formattedValue.substr(0, 2);
-    const year = formattedValue.substr(2, 4);
-
-    this.user.controls['expiration'].get('month')?.setValue(month);
-    this.user.controls['expiration'].get('year')?.setValue(year);
+    this.expirationValue = formattedValue;
+    this.userForm.get('expiration')?.setValue(formattedValue);
   }
 }

@@ -1,53 +1,55 @@
 .container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 60vh;
-    padding-left: 10px;
-  }
-  
-  .form-wrapper {
-    width: 40%;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border-radius: 8px;
-  }
-  
-  form {
-    display: grid;
-    gap: 10px;
-  }
-  
-  .form-group {
-    display: grid;
-  }
-  
-  label {
-    font-weight: bold;
-  }
-  
-  input {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .expiration-security {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  
-  button[type="submit"] {
-    background-color: orange;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: darkorange;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 50px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  padding: 20px;
+  background-color: #ccc;
+  border-radius: 8px;
+  margin-right: auto;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+input {
+  width: 390px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.expiration-security {
+  display: flex;
+  justify-content: space-between;
+}
+
+.expiration-security input {
+  width: 150px;
+  margin-bottom: 15px;
+}
+
+button.botonguardar {
+  background-color: orange;
+  color: #fff;
+  width: 400px;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 12px 20px;
+  border: none;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+button.botonguardar:hover {
+  background-color: darkorange;
+}

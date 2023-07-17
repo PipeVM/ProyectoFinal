@@ -1,35 +1,27 @@
 <div class="container">
-    <div class="form-wrapper">
-      <form novalidate (ngSubmit)="onSubmit()" [formGroup]="user">
-        
-        <div class="form-group">
-          <label for="dni">DNI del Titular</label>
-          <input id="dni" placeholder="Ingrese el DNI del titular" formControlName="dni" />
+    <form [formGroup]="userForm" (ngSubmit)="guardarTarjeta()">
+
+      <div class="form-group">
+        <label for="cardNumber">Numero de Tarjeta:</label>
+        <input id="cardNumber" type="text" formControlName="cardNumber" placeholder="Numero de Tarjeta">
+      </div>
+
+      <div class="form-group">
+        <label for="fullName">Nombre y Apellido:</label>
+        <input id="fullName" type="text" formControlName="fullName" placeholder="Nombre y Apellido">
+      </div>
+
+      <div class="expiration-security">
+        <div>
+          <label for="expiration">Fecha de Vencimiento:</label>
+          <input id="expiration" type="text" formControlName="expiration" placeholder="MM/AAAA" [(ngModel)]="expirationValue" (input)="handleExpirationInput(expirationValue)" [class.with-slash]="expirationValue.length >= 2">
         </div>
-  
-        <div class="form-group">
-          <label for="cardNumber">Numero de Tarjeta</label>
-          <input id="cardNumber" placeholder="Número de tarjeta" formControlName="cardNumber" />
+        <div>
+          <label for="securityCode">Código de Seguridad:</label>
+          <input id="securityCode" type="text" formControlName="securityCode" placeholder="CVV">
         </div>
-  
-        <div class="form-group">
-          <label for="fullName">Nombre y Apellido</label>
-          <input id="fullName" placeholder="Ingrese su nombre y apellido" formControlName="fullName" />
-        </div>
-  
-        <div class="expiration-security">
-          <div class="form-group">
-            <label for="expiration">Vencimiento</label>
-            <input id="expiration" placeholder="MM / AAAA" formControlName="month" (input)="handleExpirationInput($event.target)" [class.with-slash]="user.get('expiration.month')?.value.length >= 2" />
-          </div>
-          <div class="form-group">
-            <label for="securityCode">CVV</label>
-            <input id="securityCode" placeholder="Ingrese el código de seguridad" formControlName="securityCode" />
-          </div>
-        </div>
-  
-        <button type="submit" [disabled]="user.invalid">Sign up</button>
-      </form>
-    </div>
-  </div>
-  
+      </div>
+
+      <button class="botonguardar" type="submit" [disabled]="userForm.invalid">Guardar Tarjeta</button>
+    </form>
+</div>
