@@ -1,29 +1,52 @@
 .listado-tarjetas {
-    width: 100%;
-  }
-  
-  .titulo {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .tarjetas-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .tarjetas-table td {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .tarjetas-table tr:last-child td {
-    border-bottom: none;
-  }
-  
-  .icon {
-    cursor: pointer;
-    font-size: 18px;
-    margin-right: 10px;
-  }
-  
+  margin-top: 10vh;
+}
+
+.tabla {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.tabla th {
+  background-color: #e6493d;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.tabla td {
+  padding: 10px;
+}
+
+.tabla input[type="text"],
+.tabla input[type="number"] {
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.tabla input#dni {
+  width: 70%;
+  float: left;
+}
+
+.tabla button {
+  display: block;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #e6493d;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.tabla button:hover {
+  background-color: #ec0b0b;
+}

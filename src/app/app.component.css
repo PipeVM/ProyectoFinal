@@ -1,14 +1,9 @@
+
 .padre {
     display: flex;
+    padding: 100px;
   }
   
-  .tarjeta-credito-form, .tarjetafisica {
-    flex: 1;
-  }
-
-  .lista-tarjetas {
-    text-align: center;
-    margin: 25px;
-    margin-bottom: 50px;
-    padding: 100px;
+  .tarjeta-credito-form, .lista-tarjetas {
+    flex: 1 1 40%;
   }

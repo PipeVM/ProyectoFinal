@@ -1,8 +1,11 @@
+.todo{
+  margin-top: 20vh;
+}
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 125px;
   }
   
   .formulario {
@@ -64,4 +67,3 @@
   .formulario button:hover {
     background-color: #ec0b0b;
   }
-  

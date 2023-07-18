@@ -16,8 +16,7 @@ export class TarjetaCreditoFormComponent {
       dni: ['', [Validators.required, Validators.maxLength(8), Validators.minLength(7), Validators.pattern('[0-9]*')]],
       numeroTarjeta: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(16), Validators.pattern('[0-9]*')]],
       titular: ['', Validators.required],
-      fechaExpiracionMes: ['', [Validators.required, Validators.maxLength(2), Validators.minLength(1), Validators.pattern('[0-9]*')]],
-      fechaExpiracionAnio: ['', [Validators.required, Validators.maxLength(2), Validators.minLength(1), Validators.pattern('[0-9]*')]],
+      fechaExpiracion: ['', [Validators.required, Validators.maxLength(2), Validators.minLength(1), Validators.pattern('[0-9]*')]],
       cvv: ['', [Validators.required, Validators.maxLength(3), Validators.minLength(3), Validators.pattern('[0-9]*')]]
     });
   }
@@ -27,8 +26,7 @@ export class TarjetaCreditoFormComponent {
       dni: this.form.get('dni')?.value,
       titular: this.form.get('titular')?.value,
       numeroTarjeta: this.form.get('numeroTarjeta')?.value,
-      fechaExpiracionMes: this.form.get('fechaExpiracionMes')?.value,
-      fechaExpiracionAnio: this.form.get('fechaExpiracionAnio')?.value,
+      fechaExpiracionMes: this.form.get('fechaExpiracion')?.value,
       cvv: this.form.get('cvv')?.value,
     };
 
@@ -37,5 +35,8 @@ export class TarjetaCreditoFormComponent {
     }, error => {
       console.log(error);
     });
+  }
+  limpiarFormulario() {
+    this.form.reset();
   }
 }

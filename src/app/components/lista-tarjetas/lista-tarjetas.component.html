@@ -1,35 +1,29 @@
 <div class="listado-tarjetas">
-    <h5 class="titulo">LISTADO DE TARJETAS</h5>
-    <table class="tarjetas-table">
-      <tbody>
-        <tr *ngFor="let tarjeta of listTarjetas">
-          <td>{{ tarjeta.titular }}</td>
-          <td>{{ tarjeta.numeroTarjeta }}</td>
-          <td>{{ tarjeta.fechaExpiracion }}</td>
-          <td><i (click)="editarTarjeta(tarjeta)" class="icon fas fa-pen" style="color: #000000;"></i></td>
-          <td><i (click)="eliminarTarjeta(tarjeta.id)" class="icon fas fa-trash" style="color: #000000;"></i></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
-
-<!-- <div class="col-lg-6">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="titulo"> LISTADO DE TARJETAS </h5>
-            <table class="table">
-                <tbody>
-                    <tr *ngFor="let tarjeta of listTarjetas">
-                        <td>{{ tarjeta.titular }}</td>
-                        <td>{{ tarjeta.numeroTarjeta }}</td>
-                        <td>{{ tarjeta.fechaExpiracion }}</td>
-                        <td><i (click)="editarTarjeta(tarjeta)" class="button fa-sharp fa-regular fa-pen-to-square" style="color: #000000;"></i></td>
-                        <td><i (click)="eliminarTarjeta(tarjeta.id)"  class="button fa-regular fa-trash-alt" style="color: #000000;"></i></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-      </div>
-    </div> -->
-    <!-- En el video usa los bootstraps: text-info & text-danger para los colores de los iconos -->   
+  <table class="tabla">
+    <thead>
+      <tr>
+        <th style=width:100px;>DNI</th>
+        <th style=width:350px;>Nombre y Apellido</th>
+        <th style=width:200px;>Número de Tarjeta</th>
+        <th style="width:80px;">Fecha de Expiración</th>
+        <th style="width:150px;"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tarjeta of listTarjetas">
+        <td>{{ tarjeta.dni }}</td>
+        <td>{{ tarjeta.titular }}</td>
+        <td>{{ tarjeta.numeroTarjeta }}</td>
+        <td>{{ tarjeta.fechaExpiracion }}</td>
+        <td>
+          <button class="editar-button" (click)="editarTarjeta(tarjeta)">
+            <i class="fas fa-pen"></i>
+          </button>
+          <button class="eliminar-button" (click)="eliminarTarjeta(tarjeta.id)">
+            <i class="fas fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
