@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,5 +13,11 @@ export class HeaderComponent {
 
   openLinkedIn() {
     window.open('https://ar.linkedin.com/company/planexware', '_blank');
+  }
+
+  constructor(private router: Router) {}
+
+  navigateToHome() {
+    this.router.navigate(['/']);
   }
 }
