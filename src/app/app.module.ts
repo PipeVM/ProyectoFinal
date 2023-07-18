@@ -11,6 +11,10 @@ import { ListaTarjetasComponent } from './components/lista-tarjetas/lista-tarjet
 import { TarjetafisicaComponent } from './components/tarjetafisica/tarjetafisica.component';
 import { TarjetaCreditoFormComponent } from './components/tarjeta-credito-form/tarjeta-credito-form.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CargatarjetasComponent } from './components/cargatarjetas/cargatarjetas.component';
+import { CarrouselComponent } from './components/carrousel/carrousel.component';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -19,15 +23,20 @@ import { FooterComponent } from './components/footer/footer.component';
     TarjetafisicaComponent,
     TarjetaCreditoFormComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    CargatarjetasComponent,
+    CarrouselComponent
   ],
+
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
