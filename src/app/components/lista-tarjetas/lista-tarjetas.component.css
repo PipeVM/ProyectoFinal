@@ -1,0 +1,29 @@
+.listado-tarjetas {
+    width: 100%;
+  }
+  
+  .titulo {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .tarjetas-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tarjetas-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .tarjetas-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .icon {
+    cursor: pointer;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  

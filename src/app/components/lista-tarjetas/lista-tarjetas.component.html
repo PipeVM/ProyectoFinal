@@ -1,5 +1,35 @@
+<div class="listado-tarjetas">
+    <h5 class="titulo">LISTADO DE TARJETAS</h5>
+    <table class="tarjetas-table">
+      <tbody>
+        <tr *ngFor="let tarjeta of listTarjetas">
+          <td>{{ tarjeta.titular }}</td>
+          <td>{{ tarjeta.numeroTarjeta }}</td>
+          <td>{{ tarjeta.fechaExpiracion }}</td>
+          <td><i (click)="editarTarjeta(tarjeta)" class="icon fas fa-pen" style="color: #000000;"></i></td>
+          <td><i (click)="eliminarTarjeta(tarjeta.id)" class="icon fas fa-trash" style="color: #000000;"></i></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
 
-<!-- BOTONES DE EDITAR Y ELIMINAR
+<!-- <div class="col-lg-6">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="titulo"> LISTADO DE TARJETAS </h5>
+            <table class="table">
+                <tbody>
+                    <tr *ngFor="let tarjeta of listTarjetas">
+                        <td>{{ tarjeta.titular }}</td>
+                        <td>{{ tarjeta.numeroTarjeta }}</td>
+                        <td>{{ tarjeta.fechaExpiracion }}</td>
                         <td><i (click)="editarTarjeta(tarjeta)" class="button fa-sharp fa-regular fa-pen-to-square" style="color: #000000;"></i></td>
                         <td><i (click)="eliminarTarjeta(tarjeta.id)"  class="button fa-regular fa-trash-alt" style="color: #000000;"></i></td>
--->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+    </div> -->
+    <!-- En el video usa los bootstraps: text-info & text-danger para los colores de los iconos -->   

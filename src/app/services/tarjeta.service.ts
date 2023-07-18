@@ -6,11 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TarjetaService {
-private myAppUrl = 'https://localhost:7235/';
+private myAppUrl = 'https://localhost:7193/';
 private myApiUrl = 'api/tarjeta/';
-
-/* enviroments > enviroments.prod.ts: Si queremos configurar los parametros (Urls) en cada servicio se carga en
-esta carpeta */
 
   constructor(private http: HttpClient) { }
 
@@ -19,7 +16,7 @@ esta carpeta */
     return this.http.get(this.myAppUrl + this.myApiUrl);
   }
 
-  deleteTarjeta(id: number) : Observable<any> {
+  deleteTarjeta(id: number) : Observable<any> { // Observables para hacer las peticiones asyncronas
     return this.http.delete(this.myAppUrl + this.myApiUrl + id)
   }
 

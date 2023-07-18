@@ -1,0 +1,67 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 125px;
+  }
+  
+  .formulario {
+    width: 400px;
+    padding: 30px;
+    background-color: #ccc;
+    border-radius: 6px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    margin-top: 5px;
+  }
+  
+  .fecha-cvv-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .inputfecha,
+  .inputcvv {
+    flex: 1;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  
+  .formulario input {
+    border: none;
+    border-radius: 6px;
+    width: 350px;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .inputfecha input,
+  .inputcvv input {
+    padding: 10px;
+    width: 50px;
+  }
+  
+  .formulario button {
+    display: block;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #e6493d;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .formulario button:hover {
+    background-color: #ec0b0b;
+  }
+  

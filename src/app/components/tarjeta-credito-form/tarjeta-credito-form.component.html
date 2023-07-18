@@ -1,5 +1,5 @@
 <div class="container">
-  <form [formGroup]="form" (ngSubmit)="guardarTarjeta()">
+  <form [formGroup]="form" (ngSubmit)="guardarTarjeta()" class="formulario">
     <div class="form-group">
       <label for="dni">DNI del Titular:</label>
       <input id="dni" type="text" formControlName="dni" placeholder="DNI del Titular" maxlength="8">
@@ -15,17 +15,17 @@
       <input id="titular" type="text" formControlName="titular" placeholder="Nombre y Apellido" maxlength="40">
     </div>
 
-    <div class="lineavencimientocvv">
-      <div class="date-input">
-        <label for="fechaExpiracionMes">Mes:</label>
+    <div class="fecha-cvv-group">
+      <div class="inputfecha">
+        <label for="fechaExpiracionMes">Mes:  </label>
         <input for="fechaExpiracionMes" type="text" formControlName="fechaExpiracionMes" placeholder="MM" maxlength="2" />
       </div>
-      <div class="date-input">
-        <label for="fechaExpiracionAnio">Año de Vencimiento:</label>
+      <div class="inputfecha">
+        <label for="fechaExpiracionAnio">Año:  </label>
         <input for="fechaExpiracionAnio" type="text" formControlName="fechaExpiracionAnio" placeholder="AA" maxlength="2" />
       </div>
-      <div class="cvv-input">
-        <label for="cvv">Código de Seguridad:</label>
+      <div class="inputcvv">
+        <label for="cvv">CVV:  </label>
         <input id="cvv" type="password" formControlName="cvv" pattern="[0-9]*" placeholder="CVV" maxlength="3">
       </div>
     </div>

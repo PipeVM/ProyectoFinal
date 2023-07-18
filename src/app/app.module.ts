@@ -2,25 +2,31 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './components/header/header.component';
 
 import { AppComponent } from './app.component';
-import { TarjetaCreditoComponent } from './components/tarjeta-credito/tarjeta-credito.component';
-import { InicioComponent } from './components/inicio/inicio.component';
 import { ListaTarjetasComponent } from './components/lista-tarjetas/lista-tarjetas.component';
+import { TarjetafisicaComponent } from './components/tarjetafisica/tarjetafisica.component';
+import { TarjetaCreditoFormComponent } from './components/tarjeta-credito-form/tarjeta-credito-form.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TarjetaCreditoComponent,
-    InicioComponent,
-    ListaTarjetasComponent
+    ListaTarjetasComponent,
+    TarjetafisicaComponent,
+    TarjetaCreditoFormComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

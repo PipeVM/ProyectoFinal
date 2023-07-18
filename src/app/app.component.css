@@ -1,0 +1,7 @@
+.padre {
+    display: flex;
+  }
+  
+  .tarjeta-credito-form, .tarjetafisica {
+    flex: 1;
+  }

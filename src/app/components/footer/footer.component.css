@@ -1,0 +1,16 @@
+footer {
+    background:#444242;
+    color: #fff;
+    line-height: 1.6em;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: #ccc;
+    text-align: left;
+    overflow: hidden;
+}
